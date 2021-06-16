@@ -11,7 +11,7 @@ class App extends React.Component {
   }
   onFormSubmit = async (e) => {
     e.preventDefault();
-    let pictureData = await axios.get(`http://localhost:3002/pictures?searchQuery=${e.target.query.value}`);
+    let pictureData = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/pictures?searchQuery=${e.target.query.value}`);
 
     console.log(pictureData);
 
